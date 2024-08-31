@@ -12,9 +12,9 @@ type MenuItem struct {
 	Text string `json:"text"`
 	NoLineBreak bool `json:"no_line_break"`
 	BlankLine bool `json:"blank_line"`
-	// Food FoodItem `json:"food"`
+	Food FoodItem `json:"food"`
 	IsHoliday bool `json:"is_holiday"`
-	// FoodList []FoodItem `json:"food_list"`
+	FoodList []FoodItem `json:"food_list"`
 	StationID int `json:"station_id"`
 	IsStationHeader bool `json:"is_station_header"`
 	StationIsCollapsible bool `json:"station_is_collapsible"`
