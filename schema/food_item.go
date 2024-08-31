@@ -16,7 +16,7 @@ type FoodItem struct {
 	RoundedNutritionInfo FoodItemNutritionInfo `json:"rounded_nutrition_info"`
 	ServingSizeInfo FoodItemServingSizeInfo `json:"serving_size_info"`
 	HasNutritionInfo bool `json:"has_nutrition_info"`
-	// Icons FoodItemIconData `json:"icons"`
+	Icons FoodItemIconsData `json:"icons"`
 	IconsApproved bool `json:"icons_approved"`
 	NestedFoods []FoodItem `json:"nested_foods"`
 	// AggregatedData
@@ -60,4 +60,12 @@ type FoodItemNutritionInfo struct {
 	MicrogramsVitaminA float64 `json:"mcg_vitamin_a"`
 	VitaminD       float64 `json:"mg_vitamin_d"`
 	MicrogramsVitaminD float64 `json:"mcg_vitamin_d"`
+}
+
+type FoodItemIconsData struct {
+	FoodIcons []FoodIcon `json:"food_icons"`
+}
+
+type FoodIcon struct {
+	Name string `json:"name"`
 }
