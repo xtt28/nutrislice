@@ -14,7 +14,7 @@ type FoodItem struct {
 	FileURL string `json:"file_url"`
 	DownloadLabel string `json:"download_label"`
 	// RoundedNutritionInfo FoodItemNutritionInfo `json:"rounded_nutrition_info"`
-	// ServingSizeInfo FoodItemServingSizeInfo `json:"serving_size_info"`
+	ServingSizeInfo FoodItemServingSizeInfo `json:"serving_size_info"`
 	HasNutritionInfo bool `json:"has_nutrition_info"`
 	// Icons FoodItemIconData `json:"icons"`
 	IconsApproved bool `json:"icons_approved"`
@@ -32,4 +32,9 @@ type FoodItem struct {
 	HasSubfoods bool `json:"has_subfoods"`
 	// MealPlanPrice
 	UseCustomSizes bool `json:"use_custom_sizes"` 
+}
+
+type FoodItemServingSizeInfo struct {
+	ServingSizeAmount string `json:"serving_size_amount"`
+	ServingSizeUnit string `json:"serving_size_unit"`
 }
