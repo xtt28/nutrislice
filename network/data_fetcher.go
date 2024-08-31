@@ -2,6 +2,8 @@ package network
 
 import (
 	"encoding/json"
+	"errors"
+	"fmt"
 	"net/http"
 
 	"github.com/myBCA-app/nutrislice/schema"
@@ -12,15 +14,15 @@ func GetMenuWeekData(url string) (schema.MenuWeek, error) {
 	if err != nil {
 		return schema.MenuWeek{}, err
 	}
-
-	var body []byte
-	_, err = res.Body.Read(body)
-	if err != nil {
-		return schema.MenuWeek{}, err
+	if res.StatusCode != http.StatusOK {
+		errMsg := fmt.Sprintf("menu API endpoint did not return 200; returned %d", res.StatusCode)
+		return schema.MenuWeek{}, errors.New(errMsg)
 	}
-	
+
+	dec := json.NewDecoder(res.Body)
 	var data schema.MenuWeek
-	err = json.Unmarshal(body, &data)
+
+	err = dec.Decode(&data)
 
 	if err != nil {
 		return schema.MenuWeek{}, err
