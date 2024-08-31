@@ -10,4 +10,5 @@ type MenuWeek struct {
 	BoldAllEntreesEnabled bool `json:"bold_all_entrees_enabled"`
 	Published bool `json:"published"`
 	DisplayName string `json:"display_name"`
+	Days []MenuDay `json:"days"`
 }
