@@ -1,6 +1,6 @@
 package main
 
-import "github.com/myBCA-app/nutrislice/demo"
+import "github.com/xtt28/nutrislice/demo"
 
 func main() {
 	demo.RunDemo()

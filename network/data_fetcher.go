@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/myBCA-app/nutrislice/schema"
+	"github.com/xtt28/nutrislice/schema"
 )
 
 func GetMenuWeekData(url string) (schema.MenuWeek, error) {

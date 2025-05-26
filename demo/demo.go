@@ -4,7 +4,7 @@ import (
 	"fmt"
 	// "time"
 
-	"github.com/myBCA-app/nutrislice/network"
+	"github.com/xtt28/nutrislice/network"
 )
 
 func RunDemo() {
